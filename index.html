@@ -270,11 +270,11 @@
             <div class="form">
                 <br><br>
 
-                <form action="">
-                    <input type="text" name="name" placeholder="Name" id="" required>
-                    <input type="email" name="mail" id="" placeholder="email" required>
-                    <input type="text" name="subject" id="" placeholder="Subject" required>
-                    <textarea name="msg" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <input type="text" name="from_name" placeholder="Name" id="from_name" required>
+                    <input type="email" name="from" id="from" placeholder="email" required>
+                    <input type="text" name="subject" id="subject" placeholder="Subject" required>
+                    <textarea name="body" id="body" cols="30" rows="10" placeholder="Your Message" required></textarea>
 
                     <button type="submit">Send Message</button>
                 </form>
