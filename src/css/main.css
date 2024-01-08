@@ -269,6 +269,7 @@ section.skills {
   line-height: 2;
   border: 2px transparent solid;
   transition: all .7s;
+  background-color: #151515;
 }
 
 .experience .container > div:hover{
@@ -282,6 +283,94 @@ section.skills {
 .experience .container > div .discription {
   color: #aaa;
   line-height: 1.4;
+}
+
+.education {
+  background-color: #282828;
+
+}
+
+.education .container > div {
+  box-shadow: #000000 2px 2px 6px, #4d4d4d -2px -2px 6px;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  width: 45%;
+  text-align: left;
+  line-height: 2;
+  border: 2px transparent solid;
+  transition: all .7s;
+}
+
+.project_img {
+  border-radius: 1em;
+  height: 300px;
+  margin-bottom: 2em;
+}
+
+.project_carousel .project_theme img {
+  border-radius: 1em;
+  height: 300px;
+  margin-bottom: 2em;
+}
+
+.project .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 4vh;
+  margin: 4vh auto auto auto;
+  max-width: 1020px;
+}
+
+.project .container > div {
+  box-shadow: #000000 2px 2px 6px, #4d4d4d -2px -2px 6px;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  width: 24%;
+  text-align: left;
+  line-height: 1.4;
+  border: 2px transparent solid;
+  transition: all .7s;
+  background-color: #151515;
+}
+
+.view-project-button {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.view-project-button:hover {
+  background-color: #0056b3;
+}
+
+.item {
+  background-color: #151515;
+}
+
+.card {
+  background-color: #151515;
+  border-radius: 1em;
+  box-shadow: #000000 2px 2px 6px, #4d4d4d -2px -2px 6px;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  width: 45%;
+  text-align: left;
+  line-height: 2;
+  border: 2px transparent solid;
+  transition: all .7s;
+}
+
+.card-header {
+  font-size: 24px;
 }
 
 .form {
