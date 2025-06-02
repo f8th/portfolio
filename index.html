@@ -161,68 +161,125 @@
 
         </section>
 
-        <section class="skills"> <br>
+        <section class="skills" style="background-color: #282828;">
+            <br>
             <h2 class="headline">My Skills</h2>
-
-            <div class="container">
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-right">
-                    <p class="progress-bar-label">HTML/CSS</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-left">
-                    <p class="progress-bar-label">JavaScript</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 55%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-right">
-                    <p class="progress-bar-label">Python</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-left">
-                    <p class="progress-bar-label">Java</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 60%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-right">
-                    <p class="progress-bar-label">Flask</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-left">
-                    <p class="progress-bar-label">GIT</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-right">
-                    <p class="progress-bar-label">SQL</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 60%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-left">
-                    <p class="progress-bar-label">Shell Scripting/ Linux</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 55%;"></div>
-                    </div>
-                </div>
-
+            <div class="container"
+                style="width: 100%; max-width: 100%; margin: auto; margin-bottom: 3em; position: relative; height: 600px; overflow: hidden;">
+                <div id="icon-container" style="width: 100%; height: 100%; position: relative;"></div>
             </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+            <script>
+              const iconSources = [
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+              ];
+
+              const container = document.getElementById('icon-container');
+              const icons = [];
+
+              function isOverlapping(x, y, existingIcons, minDistance = 70) {
+                return existingIcons.some(icon => {
+                  const rect = icon.getBoundingClientRect();
+                  const iconX = rect.left;
+                  const iconY = rect.top;
+                  const distance = Math.sqrt((x - iconX) ** 2 + (y - iconY) ** 2);
+                  return distance < minDistance;
+                });
+              }
+
+              // Place icons without overlapping
+              iconSources.forEach((src, i) => {
+                const icon = document.createElement('div');
+                icon.classList.add('icon');
+                icon.style.backgroundImage = `url(${src})`;
+                icon.style.position = 'absolute';
+                icon.style.width = '60px';
+                icon.style.height = '60px';
+                icon.style.borderRadius = '50%';
+                icon.style.backgroundSize = 'cover';
+                icon.style.backgroundPosition = 'center';
+                icon.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1)';
+                let x, y;
+                do {
+                  x = Math.random() * (container.offsetWidth - 60);
+                  y = Math.random() * (container.offsetHeight - 60);
+                } while (isOverlapping(x, y, icons));
+                icon.style.left = x + 'px';
+                icon.style.top = y + 'px';
+                container.appendChild(icon);
+                icons.push(icon);
+              });
+
+              // Random movement animation
+              function animateIcons() {
+                icons.forEach((icon) => {
+                  const duration = 10 + Math.random() * 5;
+                  let newX, newY;
+                  do {
+                    newX = Math.random() * (container.offsetWidth - 60);
+                    newY = Math.random() * (container.offsetHeight - 60);
+                  } while (isOverlapping(newX, newY, icons.filter(i => i !== icon)));
+                  gsap.to(icon, {
+                    x: newX - parseFloat(icon.style.left),
+                    y: newY - parseFloat(icon.style.top),
+                    duration: duration,
+                    ease: "sine.inOut",
+                    onComplete: () => {
+                      icon.style.left = newX + 'px';
+                      icon.style.top = newY + 'px';
+                      animateIcons();
+                    }
+                  });
+                });
+              }
+              animateIcons();
+
+              // Parallax effect on mouse move (only inside container)
+              container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                const centerX = container.offsetWidth / 2;
+                const centerY = container.offsetHeight / 2;
+                const deltaX = (mouseX - centerX) / centerX;
+                const deltaY = (mouseY - centerY) / centerY;
+                icons.forEach((icon) => {
+                  const depth = 30 + Math.random() * 50;
+                  const offsetX = deltaX * depth;
+                  const offsetY = deltaY * depth;
+                  gsap.to(icon, {
+                    x: offsetX,
+                    y: offsetY,
+                    scale: 1.1,
+                    duration: 0.5,
+                    ease: "power1.out"
+                  });
+                });
+              });
+              container.addEventListener('mouseleave', () => {
+                icons.forEach((icon) => {
+                  gsap.to(icon, {
+                    x: 0,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.5,
+                    ease: "power1.out"
+                  });
+                });
+              });
+            </script>
         </section>
 
         <section class="experience">
