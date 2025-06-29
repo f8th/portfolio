@@ -18,7 +18,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://f8th.netlify.com/">
+    <meta property="og:url" content="https://f8th.netlify.app/">
     <meta property="og:title" content="Ayush Gupta">
     <meta property="og:description"
         content="Explore the world of Ayush where passion meets code. Your gateway to a developer's portfolio.">
@@ -26,7 +26,7 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://f8th.netlify.conm/">
+    <meta property="twitter:url" content="https://f8th.netlify.app/">
     <meta property="twitter:title" content="Ayush Gupta">
     <meta property="twitter:description"
         content="Explore the world of Ayush where passion meets code. Your gateway to a developer's portfolio.">
@@ -161,68 +161,245 @@
 
         </section>
 
-        <section class="skills"> <br>
-            <h2 class="headline">My Skills</h2>
-
-            <div class="container">
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-right">
-                    <p class="progress-bar-label">HTML/CSS</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-left">
-                    <p class="progress-bar-label">JavaScript</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 55%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-right">
-                    <p class="progress-bar-label">Python</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-left">
-                    <p class="progress-bar-label">Java</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 60%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-right">
-                    <p class="progress-bar-label">Flask</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-left">
-                    <p class="progress-bar-label">GIT</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-right">
-                    <p class="progress-bar-label">SQL</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 60%;"></div>
-                    </div>
-                </div>
-
-                <div class="progress-bar-wrapper" data-aos="fade-up-left">
-                    <p class="progress-bar-label">Shell Scripting/ Linux</p>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 55%;"></div>
-                    </div>
-                </div>
-
+        <section class="skills" style="background-color: #282828;">
+            <br>
+            <h2 class="headline" style="animation: fadeInDown 1s;">My Skills</h2>
+            <!-- <p style="color:#ccc; text-align:center; max-width:700px; margin:0 auto 1.5em auto; font-size:1.2em; animation: fadeIn 2s;">
+              A showcase of the technologies I use most. Hover or tap an icon to see the skill name. Click for more info!
+            </p> -->
+            <div class="container" style="width: 100%; max-width: 100%; margin: auto; margin-bottom: 3em; position: relative; height: 40vw; min-height: 300px; max-height: 600px; overflow: hidden;">
+                <div id="icon-container" style="width: 100%; height: 100%; position: relative;"></div>
             </div>
+            <style>
+              @keyframes fadeInDown { from { opacity:0; transform:translateY(-30px);} to { opacity:1; transform:translateY(0);} }
+              @keyframes fadeIn { from { opacity:0;} to { opacity:1;} }
+              .icon-label {
+                position: absolute;
+                left: 50%;
+                top: 110%;
+                transform: translateX(-50%);
+                background: rgba(40,40,40,0.95);
+                color: #fff;
+                padding: 2px 10px;
+                border-radius: 6px;
+                font-size: 0.95em;
+                white-space: nowrap;
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity 0.2s;
+                z-index: 2;
+              }
+              .icon:hover .icon-label, .icon:focus .icon-label, .icon:active .icon-label {
+                opacity: 1;
+              }
+              @media (max-width: 600px) {
+                .skills .container { height: 300px !important; }
+                .icon { width: 40px !important; height: 40px !important; }
+              }
+            </style>
+            <script>
+              const iconSources = [
+                // Languages
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', label: 'Python', desc: 'General-purpose programming language.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg', label: 'Dart', desc: 'Programming language for Flutter.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', label: 'JavaScript', desc: 'Web programming language.'},
+                // AI/ML
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg', label: 'PyTorch', desc: 'Deep learning framework.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg', label: 'TensorFlow', desc: 'Machine learning framework.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg', label: 'OpenCV', desc: 'Computer vision library.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg', label: 'LangChain', desc: 'LLM orchestration (Azure icon as workflow).'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg', label: 'LlamaIndex', desc: 'Data framework for LLMs (Neo4j icon as data graph).'},
+                // Frameworks
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg', label: 'Flask', desc: 'Python web framework.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg', label: 'FastAPI', desc: 'Python web API framework.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', label: 'ReactJS', desc: 'Frontend UI library.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg', label: 'Flutter', desc: 'Cross-platform UI toolkit.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetbrains/jetbrains-original.svg', label: 'Riverpod', desc: 'Flutter state management (JetBrains icon as code tool).'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-original.svg', label: 'MVVM', desc: 'Flutter architecture (Trello icon as architecture).'},
+                // Tools
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', label: 'Docker', desc: 'Containerization platform.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', label: 'Git', desc: 'Version control system.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', label: 'GitHub Actions', desc: 'CI/CD automation.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/circleci/circleci-plain.svg', label: 'CI/CD', desc: 'Continuous Integration/Deployment.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', label: 'Postgres', desc: 'Relational database.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', label: 'Firebase', desc: 'Cloud backend platform.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', label: 'VectorDBs', desc: 'Vector databases.'},
+                // Cloud
+                {src: 'https://github.com/devicons/devicon/blob/v2.16.0/icons/amazonwebservices/amazonwebservices-original-wordmark.svg?raw=true', label: 'AWS', desc: 'Amazon Web Services.'},
+                {src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg', label: 'GCP', desc: 'Google Cloud Platform.'}
+              ];
+              const container = document.getElementById('icon-container');
+              const icons = [];
+              const iconStates = [];
+              const ICON_SIZE = 60;
+              // Place icons without overlapping
+              iconSources.forEach((item, i) => {
+                const icon = document.createElement('div');
+                icon.classList.add('icon');
+                icon.setAttribute('tabindex', '0');
+                icon.setAttribute('aria-label', item.label);
+                icon.style.backgroundImage = `url(${item.src})`;
+                icon.style.position = 'absolute';
+                icon.style.width = ICON_SIZE + 'px';
+                icon.style.height = ICON_SIZE + 'px';
+                icon.style.borderRadius = '50%';
+                icon.style.backgroundSize = 'cover';
+                icon.style.backgroundPosition = 'center';
+                icon.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1)';
+                icon.style.transition = 'transform 0.2s';
+                // Label
+                const label = document.createElement('span');
+                label.className = 'icon-label';
+                label.innerText = item.label;
+                icon.appendChild(label);
+                // Tooltip/modal on click
+                icon.addEventListener('click', function(e) {
+                  e.stopPropagation();
+                  showSkillModal(item.label, item.desc, item.src);
+                });
+                icon.addEventListener('keydown', function(e) {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    showSkillModal(item.label, item.desc, item.src);
+                  }
+                });
+                let x, y;
+                function isOverlapping(x, y, minDistance = ICON_SIZE + 10) {
+                  return iconStates.some(state => {
+                    const dx = x - state.x;
+                    const dy = y - state.y;
+                    return Math.sqrt(dx*dx + dy*dy) < minDistance;
+                  });
+                }
+                let attempts = 0;
+                do {
+                  x = Math.random() * (container.offsetWidth - ICON_SIZE);
+                  y = Math.random() * (container.offsetHeight - ICON_SIZE);
+                  attempts++;
+                  if (attempts > 100) break;
+                } while (isOverlapping(x, y));
+                icon.style.left = x + 'px';
+                icon.style.top = y + 'px';
+                container.appendChild(icon);
+                icons.push(icon);
+                // Assign random velocity
+                const angle = Math.random() * 2 * Math.PI;
+                const speed = 0.7 + Math.random() * 0.7; // px per frame
+                iconStates.push({
+                  x, y,
+                  dx: Math.cos(angle) * speed,
+                  dy: Math.sin(angle) * speed,
+                  el: icon
+                });
+              });
+              // Animation loop with bounce and collision
+              function animate() {
+                const w = container.offsetWidth;
+                const h = container.offsetHeight;
+                for (let i = 0; i < iconStates.length; i++) {
+                  let state = iconStates[i];
+                  // Move
+                  state.x += state.dx;
+                  state.y += state.dy;
+                  // Bounce on wall
+                  if (state.x < 0) { state.x = 0; state.dx *= -1; }
+                  if (state.x > w - ICON_SIZE) { state.x = w - ICON_SIZE; state.dx *= -1; }
+                  if (state.y < 0) { state.y = 0; state.dy *= -1; }
+                  if (state.y > h - ICON_SIZE) { state.y = h - ICON_SIZE; state.dy *= -1; }
+                  // Collision with other icons
+                  for (let j = i + 1; j < iconStates.length; j++) {
+                    let other = iconStates[j];
+                    const dx = other.x - state.x;
+                    const dy = other.y - state.y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if (dist < ICON_SIZE + 4) { // collision detected
+                      // Simple elastic bounce: swap velocities
+                      const tempDx = state.dx;
+                      const tempDy = state.dy;
+                      state.dx = other.dx;
+                      state.dy = other.dy;
+                      other.dx = tempDx;
+                      other.dy = tempDy;
+                      // Move them apart
+                      const overlap = (ICON_SIZE + 4 - dist) / 2;
+                      const angle = Math.atan2(dy, dx);
+                      state.x -= Math.cos(angle) * overlap;
+                      state.y -= Math.sin(angle) * overlap;
+                      other.x += Math.cos(angle) * overlap;
+                      other.y += Math.sin(angle) * overlap;
+                    }
+                  }
+                  state.el.style.left = state.x + 'px';
+                  state.el.style.top = state.y + 'px';
+                }
+                requestAnimationFrame(animate);
+              }
+              animate();
+              // Parallax effect on mouse move (only inside container)
+              container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                const centerX = container.offsetWidth / 2;
+                const centerY = container.offsetHeight / 2;
+                const deltaX = (mouseX - centerX) / centerX;
+                const deltaY = (mouseY - centerY) / centerY;
+                icons.forEach((icon) => {
+                  const depth = 30 + Math.random() * 50;
+                  const offsetX = deltaX * depth;
+                  const offsetY = deltaY * depth;
+                  icon.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.1)`;
+                });
+              });
+              container.addEventListener('mouseleave', () => {
+                icons.forEach((icon) => {
+                  icon.style.transform = 'translate(0,0) scale(1)';
+                });
+              });
+              // Modal for skill info
+              function showSkillModal(label, desc, src) {
+                let modal = document.getElementById('skill-modal');
+                if (!modal) {
+                  modal = document.createElement('div');
+                  modal.id = 'skill-modal';
+                  modal.style.position = 'fixed';
+                  modal.style.left = '0';
+                  modal.style.top = '0';
+                  modal.style.width = '100vw';
+                  modal.style.height = '100vh';
+                  modal.style.background = 'rgba(0,0,0,0.7)';
+                  modal.style.display = 'flex';
+                  modal.style.alignItems = 'center';
+                  modal.style.justifyContent = 'center';
+                  modal.style.zIndex = '9999';
+                  modal.innerHTML = `<div style="background:#222;padding:2em 2.5em;border-radius:16px;box-shadow:0 8px 32px #0008;text-align:center;max-width:90vw;max-height:90vh;position:relative;animation:fadeIn 0.3s;">
+                    <img src="${src}" alt="${label}" style="width:60px;height:60px;display:block;margin:0 auto 1em auto;">
+                    <h3 style="color:#fff;margin-bottom:0.5em;">${label}</h3>
+                    <p style="color:#ccc;font-size:1.1em;">${desc}</p>
+                    <button id="close-skill-modal" style="margin-top:1.5em;padding:0.5em 1.5em;background:#444;color:#fff;border:none;border-radius:6px;cursor:pointer;">Close</button>
+                  </div>`;
+                  document.body.appendChild(modal);
+                } else {
+                  modal.querySelector('img').src = src;
+                  modal.querySelector('img').alt = label;
+                  modal.querySelector('h3').innerText = label;
+                  modal.querySelector('p').innerText = desc;
+                  modal.style.display = 'flex';
+                }
+                document.getElementById('close-skill-modal').onclick = function() {
+                  modal.style.display = 'none';
+                };
+                modal.onclick = function(e) {
+                  if (e.target === modal) modal.style.display = 'none';
+                };
+              }
+              // Accessibility: close modal with Escape
+              document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                  const modal = document.getElementById('skill-modal');
+                  if (modal) modal.style.display = 'none';
+                }
+              });
+            </script>
         </section>
 
         <section class="experience">
@@ -326,7 +503,7 @@
                         libraries.
                     </p>
                     <br>
-                    <a href="https://hub.docker.com/r/ayushgupta3017/face_detection" class="view-project-button">View
+                    <a href="https://hub.docker.com/r/ayushgupta3017/face_detection" class="view-project-button" target="_blank" rel="noopener noreferrer">View
                         Project</a>
                 </div>
                 <div data-aos="fade-up-left">
@@ -339,8 +516,7 @@
                         Protective Equipment (PPE)
                     </p>
                     <br>
-                    <a href="https://hub.docker.com/r/ayushgupta3017/ppe-violation-detection"
-                        class="view-project-button">View Project</a>
+                    <a href="https://hub.docker.com/r/ayushgupta3017/ppe-violation-detection" class="view-project-button" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div data-aos="fade-up-right">
                     <h3 class="title">Social Buzz</h3>
@@ -350,7 +526,7 @@
                         Analyzed Social Buzz's content performance data to identify key insights and trends
                     </p>
                     <br>
-                    <a href="https://github.com/Anonymous3017/Social_Buzz" class="view-project-button">View Project</a>
+                    <a href="https://github.com/Anonymous3017/Social_Buzz" class="view-project-button" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div data-aos="fade-up-left">
                     <br>
@@ -361,7 +537,7 @@
                         User Friendly Flask-based ToDo app with login Authentication and CRUD operations
                     </p>
                     <br>
-                    <a href="http://ayush042.pythonanywhere.com/" class="view-project-button">View Project</a>
+                    <a href="http://ayush042.pythonanywhere.com/" class="view-project-button" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div data-aos="fade-up-right">
                     <h3 class="title">Study Cafe</h3>
@@ -371,7 +547,7 @@
                         Static website for a library as a business purpose.
                     </p>
                     <br>
-                    <a href="https://anonymous3017.github.io/library/" class="view-project-button">View Project</a>
+                    <a href="https://anonymous3017.github.io/library/" class="view-project-button" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div data-aos="fade-up-left">
                     <h3 class="title">Brain Stroke Prediction</h3>
@@ -381,8 +557,7 @@
                         Machine learning model to predict the chances of a person getting a brain stroke.
                     </p>
                     <br>
-                    <a href="https://github.com/Anonymous3017/Data-Analysis-on-Stroke-Prediction"
-                        class="view-project-button">View Project</a>
+                    <a href="https://github.com/Anonymous3017/Data-Analysis-on-Stroke-Prediction" class="view-project-button" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div data-aos="fade-up-right">
                     <h3 class="title">The Focal Point </h3>
@@ -392,7 +567,7 @@
                         Android app built in java using pomodor timer with a focus on productivity.
                     </p>
                     <br>
-                    <a href="https://github.com/Anonymous3017/focus-timer" class="view-project-button">View Project</a>
+                    <a href="https://github.com/Anonymous3017/focus-timer" class="view-project-button" target="_blank" rel="noopener noreferrer">View Project</a>
                 </div>
                 <div data-aos="fade-up-left">
                     <h3 class="title">Python Stealer</h3>
@@ -402,8 +577,61 @@
                         A Python script that captures system information and sends it to a Telegram bot.
                     </p>
                     <br>
-                    <a href="https://github.com/Anonymous3017/pythonStealer" class="view-project-button">View
-                        Project</a>
+                    <a href="https://github.com/Anonymous3017/pythonStealer" class="view-project-button" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+                <div data-aos="fade-up-right">
+                    <h3 class="title">Video Streaming App</h3>
+                    <p class="time">(2025)</p>
+                    <br>
+                    <p class="description">
+                        YouTube-like app for uploading, streaming, and sharing videos securely.
+                    </p>
+                    <br>
+                    <a href="https://github.com/Anonymous3017/video-streaming-app" class="view-project-button" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+                <div data-aos="fade-up-left">
+                    <h3 class="title">Multiple PDF Chat App</h3>
+                    <p class="time">(2025)</p>
+                    <br>
+                    <p class="description">
+                        Chat with an AI about your uploaded PDFs in one place.
+                    </p>
+                    <br>
+                    <a href="https://github.com/Anonymous3017/multiple-pdf-chat-app" class="view-project-button" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
+                <div data-aos="fade-up-right">
+                    <h3 class="title">Music Streaming App</h3>
+                    <p class="time">(2024)</p>
+                    <br>
+                    <p class="description">
+                        Modern Flutter app for streaming and managing your favorite music.
+                    </p>
+                    <br>
+                    
+                    <!-- <a href="https://github.com/Anonymous3017/musicapp-flutter" class="view-project-button" style="margin-right:10px;">View Project</a> -->
+                    <a href="https://appetize.io/app/b_2e5mii5bo2wivh5slst525r2ci/" class="view-project-button" style="background:#28a745;" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+                <div data-aos="fade-up-left">
+                    <h3 class="title">Global Chat App</h3>
+                    <p class="time">(2024)</p>
+                    <br>
+                    <p class="description">
+                        Real-time group chat app with authentication and a clean UI.
+                    </p>
+                    <br>
+                    <!-- <a href="https://github.com/Anonymous3017/dart" class="view-project-button" style="margin-right:10px;">View Project</a> -->
+                    <a href="https://appetize.io/app/b_gt3p6wyg33monmy4tkttpoaazm?device=pixel7&osVersion=13.0&toolbar=true&scale=75" class="view-project-button" style="background:#28a745;" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+                <div data-aos="fade-up-right">
+                    <h3 class="title">TryOnMe AI Fashion App</h3>
+                    <p class="time">(2025)</p>
+                    <br>
+                    <p class="description">
+                        Instantly try on clothes virtually with AI-powered image overlays.
+                    </p>
+                    <br>
+                    <!-- <a href="https://github.com/ayush-inzint/tryon_me" class="view-project-button">View Project</a> -->
+                    <a href="https://www.linkedin.com/posts/ayush-gupta-838823227_ai-virtualtryon-flutter-activity-7331021509399937024-8mp-" class="view-project-button" style="background:#0077b5;" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
 
