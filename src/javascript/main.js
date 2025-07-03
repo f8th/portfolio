@@ -4,6 +4,8 @@ async function startTyping() {
             'Hey I am Ayush Gupta.',
             'I am a learner.',
             'I am a Software developer.',
+            'I am a AI Engineer.',
+            'I am a Flutter Developer.',
             'I am a Web Developer.',
             'I am a Data Analyst.'
         ],
